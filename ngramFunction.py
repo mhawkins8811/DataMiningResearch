@@ -1,19 +1,22 @@
 import nltk, re, string, collections, glob
 from nltk.util import ngrams
 from nltk.corpus import stopwords
-nltk.download("stopwords")
-nltk.download("wordnet")
-
-# defined path
-path = "op_spam_v1.4/positive_polarity/truthful_from_TripAdvisor/fold1/*.txt"
-# glob is used to go to every file in the directory
-files = glob.glob(path)
+# nltk.download("stopwords")
+# nltk.download("wordnet")
 
 text = ""
-# put all the files on text
-for name in files:
-    with open(name) as file:
-        text += file.read()
+
+for i in range(1,6):
+    # defined path
+    path = "op_spam_v1.4/positive_polarity/truthful_from_TripAdvisor/fold"+str(i)+"/*.txt"
+    print(path)
+    # glob is used to go to every file in the directory
+    files = glob.glob(path)
+
+    # put all the files on text
+    for name in files:
+        with open(name) as file:
+            text += file.read()
 
 # Remove punctuation
 punctuationNoPeriod = "[" + re.sub("\.","",string.punctuation) + "]"
