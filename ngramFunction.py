@@ -1,8 +1,8 @@
 import nltk, re, string, collections, glob
 from nltk.util import ngrams
 from nltk.corpus import stopwords
-# nltk.download("stopwords")
-# nltk.download("wordnet")
+nltk.download("stopwords")
+nltk.download("wordnet")
 
 text = ""
 
