@@ -8,8 +8,18 @@ text = ""
 
 for i in range(1,6):
     # defined path
+    # Positive and truthful
     path = "op_spam_v1.4/positive_polarity/truthful_from_TripAdvisor/fold"+str(i)+"/*.txt"
-    print(path)
+
+    # Positive and deceptive
+    # path = "op_spam_v1.4/positive_polarity/deceptive_from_MTurk/fold" + str(i) + "/*.txt"
+
+    # Negative and truthful
+    # path = "op_spam_v1.4/negative_polarity/truthful_from_Web/fold" + str(i) + "/*.txt"
+
+    # Negative and deceptive
+    # path = "op_spam_v1.4/negative_polarity/deceptive_from_MTurk/fold" + str(i) + "/*.txt"
+
     # glob is used to go to every file in the directory
     files = glob.glob(path)
 
