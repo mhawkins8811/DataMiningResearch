@@ -1,15 +1,17 @@
 import nltk, re, string, collections, glob
 from nltk.util import ngrams
 from nltk.corpus import stopwords
-nltk.download("stopwords")
-nltk.download("wordnet")
+import pandas as pd
+from sklearn.feature_extraction.text import CountVectorizer
+# nltk.download("stopwords")
+# nltk.download("wordnet")
 
 text = ""
 
 for i in range(1,6):
     # defined path
     # Positive and truthful
-    path = "op_spam_v1.4/positive_polarity/truthful_from_TripAdvisor/fold"+str(i)+"/*.txt"
+    # path = "op_spam_v1.4/positive_polarity/truthful_from_TripAdvisor/fold"+str(i)+"/*.txt"
 
     # Positive and deceptive
     # path = "op_spam_v1.4/positive_polarity/deceptive_from_MTurk/fold" + str(i) + "/*.txt"
@@ -18,7 +20,7 @@ for i in range(1,6):
     # path = "op_spam_v1.4/negative_polarity/truthful_from_Web/fold" + str(i) + "/*.txt"
 
     # Negative and deceptive
-    # path = "op_spam_v1.4/negative_polarity/deceptive_from_MTurk/fold" + str(i) + "/*.txt"
+    path = "op_spam_v1.4/negative_polarity/deceptive_from_MTurk/fold" + str(i) + "/*.txt"
 
     # glob is used to go to every file in the directory
     files = glob.glob(path)
@@ -85,3 +87,19 @@ print(bigram_val_freq.most_common(10))
 print("\n")
 print("Trigram:")
 print(trigram_val_freq.most_common(10))
+print("\n")
+
+with open("save/bigramFalseNegative.csv", 'w') as file:
+    for value in bigram_val_freq.items():
+        file.write(str(value)+"\n")
+    file.close()
+
+with open("save/unigramFalseNegative.csv", 'w') as file:
+    for value in unigram_val_freq.items():
+        file.write(str(value)+"\n")
+    file.close()
+
+with open("save/trigramFalseNegative.csv", 'w') as file:
+    for value in trigram_val_freq.items():
+        file.write(str(value)+"\n")
+    file.close()

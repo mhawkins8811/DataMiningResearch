@@ -1,4 +1,6 @@
-import nltk, re, string, collections, glob, math
+import pickle
+
+import nltk, re, string, collections, glob, math, numpy
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from nltk.util import ngrams
@@ -81,6 +83,11 @@ matrix = vectorize.fit_transform(bloblist).todense()
 matrix = pd.DataFrame(matrix, columns=vectorize.get_feature_names())
 
 top_words = matrix.sum(axis=0).sort_values(ascending=False)
+
+pd.DataFrame(top_words).to_csv("save/frequencies2.csv", header=None)
+
+#with open('save/frequencies.csv', 'wb') as file:
+ #   pickle.dump(top_words, file, pickle.FLOAT)
 
 print(top_words)
 
