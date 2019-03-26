@@ -3,8 +3,16 @@ from nltk.util import ngrams
 from nltk.corpus import stopwords
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
-# nltk.download("stopwords")
-# nltk.download("wordnet")
+nltk.download("stopwords")
+nltk.download("wordnet")
+import csv
+
+
+#lines to read and bring inthe csv file
+#with open('deceptive-opinion.csv') as csvfile:
+#    readCSV = csv.reader(csvfile, delimiter=',')
+#    for row in readCSV:
+#        text = csvfile.read()
 
 text = ""
 
