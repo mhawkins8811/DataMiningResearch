@@ -3,8 +3,8 @@ from nltk.util import ngrams
 from nltk.corpus import stopwords
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
-nltk.download("stopwords")
-nltk.download("wordnet")
+#nltk.download("stopwords")
+#nltk.download("wordnet")
 import csv
 
 
