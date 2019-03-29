@@ -3,20 +3,20 @@ from nltk.util import ngrams
 from nltk.corpus import stopwords
 import pandas as pd
 from sklearn.feature_extraction.text import CountVectorizer
-#nltk.download("stopwords")
-#nltk.download("wordnet")
+#nltk.download("stopwords")#needed when ran for the first time then comment
+#nltk.download("wordnet")#needed when ran for the first time then comment
 import csv
-
-
-#lines to read and bring inthe csv file
-#with open('deceptive-opinion.csv') as csvfile:
-#    readCSV = csv.reader(csvfile, delimiter=',')
-#    for row in readCSV:
-#        text = csvfile.read()
 
 text = ""
 
-for i in range(1,6):
+#lines to read and bring inthe csv file
+with open('deceptive-opinion.csv') as csvfile:
+    readCSV = csv.reader(csvfile, delimiter=',')
+    for row in readCSV:
+        text = csvfile.read()
+
+#text file no longer used
+#for i in range(1,6):
     # defined path
     # Positive and truthful
     # path = "op_spam_v1.4/positive_polarity/truthful_from_TripAdvisor/fold"+str(i)+"/*.txt"
@@ -28,15 +28,15 @@ for i in range(1,6):
     # path = "op_spam_v1.4/negative_polarity/truthful_from_Web/fold" + str(i) + "/*.txt"
 
     # Negative and deceptive
-    path = "op_spam_v1.4/negative_polarity/deceptive_from_MTurk/fold" + str(i) + "/*.txt"
+#    path = "op_spam_v1.4/negative_polarity/deceptive_from_MTurk/fold" + str(i) + "/*.txt"
 
     # glob is used to go to every file in the directory
-    files = glob.glob(path)
+ #   files = glob.glob(path)
 
     # put all the files on text
-    for name in files:
-        with open(name) as file:
-            text += file.read()
+#    for name in files:
+#        with open(name) as file:
+#            text += file.read()
 
 # Remove punctuation
 punctuationNoPeriod = "[" + re.sub("\.","",string.punctuation) + "]"
