@@ -60,17 +60,17 @@ for i in range(1,6):
 
 
 # Remove punctuation
-punctuationNoPeriod = "[" + re.sub("\.","",string.punctuation) + "]"
-text = re.sub(punctuationNoPeriod, "", textA)
+punctuationNoPeriodA = "[" + re.sub("\.","",string.punctuation) + "]"
+textA = re.sub(punctuationNoPeriodA, "", textA)
 
-punctuationNoPeriod = "[" + re.sub("\.","",string.punctuation) + "]"
-text = re.sub(punctuationNoPeriod, "", textB)
+punctuationNoPeriodB = "[" + re.sub("\.","",string.punctuation) + "]"
+textB = re.sub(punctuationNoPeriodB, "", textB)
 
-punctuationNoPeriod = "[" + re.sub("\.","",string.punctuation) + "]"
-text = re.sub(punctuationNoPeriod, "", textC)
+punctuationNoPeriodC = "[" + re.sub("\.","",string.punctuation) + "]"
+textC = re.sub(punctuationNoPeriodC, "", textC)
 
-punctuationNoPeriod = "[" + re.sub("\.","",string.punctuation) + "]"
-text = re.sub(punctuationNoPeriod, "", textD)
+punctuationNoPeriodD = "[" + re.sub("\.","",string.punctuation) + "]"
+textD = re.sub(punctuationNoPeriodD, "", textD)
 
 # Split to tokenize all the words on text
 tokenizedA = textA.split()
